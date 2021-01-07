@@ -64,7 +64,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="#D53030"
+                android:backgroundTint="#49D530"
                 android:text="Ver reportes" />
 
             <Button
