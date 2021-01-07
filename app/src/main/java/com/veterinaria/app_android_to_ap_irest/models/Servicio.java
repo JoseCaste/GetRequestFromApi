@@ -3,6 +3,7 @@ package com.veterinaria.app_android_to_ap_irest.models;
 import java.util.Date;
 
 public class Servicio {
+    /*change a little code for view on github */
         private long id;
         private String nombrePerro;
         private String responsable;
