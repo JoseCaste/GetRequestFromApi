@@ -68,12 +68,13 @@
                 android:text="Ver reportes" />
 
             <Button
+                android:id="@+id/btnEditInform"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Editar informe"
-                android:id="@+id/btnEditInform" />
+                android:layout_weight="1"
+                android:backgroundTint="#D69C28"
+                android:text="Editar informe...." />
         </LinearLayout>
 
     </LinearLayout>
