@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.google.gson.internal.$Gson$Preconditions;
 import com.veterinaria.app_android_to_ap_irest.R;
 import com.veterinaria.app_android_to_ap_irest.adpter.MyAdapter;
 import com.veterinaria.app_android_to_ap_irest.models.Servicio;
@@ -76,10 +77,12 @@ public class MainFragment extends Fragment{
     }
 
     public void peticion() {
-        String url="https://spring-boot-deploy-test.herokuapp.com/";
+        //String url="https://spring-boot-deploy-test.herokuapp.com/";
+        String url="http://192.168.3.7:8084/";
         Retrofit retrofit= new Retrofit.Builder().baseUrl(url).addConverterFactory(GsonConverterFactory.create()).build();
         GetService getService= retrofit.create(GetService.class);
         Call<List<Servicio>>call= getService.getServices();
+        System.out.println("Entra aqui ---->");
         call.enqueue(new Callback<List<Servicio>>() {
             @Override
             public void onResponse(Call<List<Servicio>> call, Response<List<Servicio>> response) {
@@ -95,6 +98,8 @@ public class MainFragment extends Fragment{
 
             @Override
             public void onFailure(Call<List<Servicio>> call, Throwable t) {
+
+                System.out.println("Error: "+call.toString()+" "+t.getMessage());
             }
         });
     }
